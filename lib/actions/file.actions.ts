@@ -30,6 +30,8 @@ export const uploadFile = async ({
       inputFile,
     );
 
+    // console.log('bucketID', appwriteConfig.bucketId);
+
     const fileDocument = {
       type: getFileType(bucketFile.name).type,
       name: bucketFile.name,
@@ -40,6 +42,8 @@ export const uploadFile = async ({
       accountId,
       users: [],
       bucketFileId: bucketFile.$id,
+
+      bucketField: appwriteConfig.bucketId,
     };
 
     const newFile = await databases
